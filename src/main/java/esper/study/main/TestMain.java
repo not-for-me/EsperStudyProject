@@ -3,13 +3,12 @@ package esper.study.main;
 import java.util.Random;
 
 import org.apache.log4j.BasicConfigurator;
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
 
 import com.espertech.esper.client.EPStatement;
 
 import esper.study.event.BaseEvent;
 import esper.study.listener.DefaultListener;
+
 
 public class TestMain {
 	
@@ -33,7 +32,8 @@ public class TestMain {
 		for(int i = 0; i < eventCounter; i++){
 			BaseEvent event = generateBaseEvent(i);
 			engine.getEngine().getEPRuntime().sendEvent(event);
-			try { Thread.sleep(1000); } catch (InterruptedException e) { e.printStackTrace(); }
+			try { Thread.sleep(1000); } 
+			catch (InterruptedException e) { e.printStackTrace(); }
 		}
 	}
 

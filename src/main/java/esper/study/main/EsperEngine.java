@@ -22,5 +22,5 @@ public class EsperEngine {
 	public void setEngine(EPServiceProvider engine) {
 		this.engine = engine;
 	}
-	
 }
+
