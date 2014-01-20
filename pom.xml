@@ -3,11 +3,16 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>esper.study</groupId>
 	<artifactId>EsperStudyProject</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1-BASIC_CONF</version>
 	<dependencies>
 		<dependency>
 			<groupId>com.espertech</groupId>
 			<artifactId>esper</artifactId>
+			<version>LATEST</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
 			<version>LATEST</version>
 		</dependency>
 	</dependencies>
