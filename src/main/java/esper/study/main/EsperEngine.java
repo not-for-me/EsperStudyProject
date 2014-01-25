@@ -1,5 +1,7 @@
 package esper.study.main;
 
+import java.io.File;
+
 import com.espertech.esper.client.Configuration;
 import com.espertech.esper.client.EPServiceProvider;
 import com.espertech.esper.client.EPServiceProviderManager;
@@ -11,7 +13,8 @@ public class EsperEngine {
 	
 	public EsperEngine () {
 		Configuration config = new Configuration();
-		config.addEventType("BaseEvent", BaseEvent.class.getName());
+		config.configure(new File("./src/main/resources/esper.cfg.xml"));
+		//config.addEventType("BaseEvent", BaseEvent.class.getName());
 		this.engine = EPServiceProviderManager.getDefaultProvider(config);
 	}
 		
