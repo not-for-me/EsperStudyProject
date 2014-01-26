@@ -43,10 +43,10 @@ public class NestedMapEventTypeTest {
 
 		/*
 		 * Register an EPL Statement to Esper Engine
-		 * The reason of "TEST_EVENT_NUM+1" calculation is for retaining whole events until release them without comparison.  
+		 * The reason of "TEST_EVENT_NUM+2" calculation is for retaining whole events until release them without comparison.  
 		 */
 		String epl = "select accountId, fields.name, fields.address, fields.history.firstUpdate, fields.history.lastUpdate"
-				+ " from AccountUpdate.win:time("+ (TEST_EVENT_NUM+1) * SLEEP_Milli_SEC +" milliseconds)";
+				+ " from AccountUpdate.win:time("+ (TEST_EVENT_NUM+2) * SLEEP_Milli_SEC +" milliseconds)";
 		this.stmt = engine.getEngine().getEPAdministrator().createEPL(epl);
 
 		//Now Esper Engine is ready for incoming events

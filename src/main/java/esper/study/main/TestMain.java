@@ -20,7 +20,10 @@ public class TestMain {
 		EsperEngine engine = new EsperEngine();
 		
 		//Register an EPL Statement to Esper Engine
-		String epl = "select eventID, dataIntVal from BaseEvent";
+		String epl = "select eventID, db_int_val, db_double_val, db_str_val from BaseEvent as base, "
+				+ "sql:myTestDB ['select * from test_data'] as db "
+				+ "where base.eventID = db.id";
+		
 		EPStatement stmt = engine.getEngine().getEPAdministrator().createEPL(epl);
 
 		//Register an Listener to Esper Engine
